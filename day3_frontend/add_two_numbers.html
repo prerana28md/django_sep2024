@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add two numbers</title>
+</head>
+  <style>
+    div {
+    margin : 10px;
+    }
+    
+    .button{
+        width : 60px;
+        background_color : yellow;
+    }
+
+  </style>
+<body>
+    <div>
+        <form>
+            <div><label for="firstNumber">first number </label>
+                 <input type="text" id="firstNumber" autocomplete="off"/></div>
+            <div><label for="secondNumber">second number</label>
+                <input type="text" id="secondNumber" autocomplete="off"/></div>
+            <div><label for="sumNumber">sum</label>
+                <input type="text" id="sumNumber" autocomplete="off"/></div>
+            <button type="button" onclick="doAdd();">Add</button>
+        </form>
+    </div>
+    <script type="text/javascript">
+        function doAdd() {
+            let first = parseInt(document.getElementById("firstNumber").value);
+            let second = parseInt(document.getElementById("secondNumber").value);
+            let sum = first + second;
+            document.getElementById("sumNumber").value = sum;
+        }
+        window.onload = function() {
+            
+            document.getElementById("firstnumber").value = '';
+            document.getElementById("secondnumber").value = '';
+            
+
+        }
+    </script>
+    
+</body>
+</html>

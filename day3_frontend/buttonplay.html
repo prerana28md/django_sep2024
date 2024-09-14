@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .button {
+            width: 80px;
+            height: 40px;
+            background-color: yellow;
+            color: rgb(129, 22, 210);
+            border: 2px solid rgb(228, 21, 138);
+            border-radius: 5px;
+            font-size: 24px;
+            font-weight: bolder;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <input class="button" type="button" value="0" onmouseleave="decrement()" onclick="double()"
+        onmouseenter="increment()" id="myBtn" />
+    <input class="button" type="button" value="0" onmouseleave="decrement()" onclick="double()"
+        onmouseenter="increment()" id="myBtn" />
+
+    <script>
+        function decrement() {
+            number = document.getElementById('myBtn').value;
+            number = parseInt(number)
+            number -= 1;
+            document.getElementById('myBtn').value = number;
+        }
+        function increment() {
+            number = document.getElementById('myBtn').value;
+            number = parseInt(number)
+            number++;
+            document.getElementById('myBtn').value = number;
+        }
+        function double() {
+            number = document.getElementById('myBtn').value;
+            number = parseInt(number)
+            number = number * 2;
+            document.getElementById('myBtn').value = number;
+        }
+    </script>
+</body>
+
+</html>

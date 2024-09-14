@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .button {
+            width: 80px;
+            height: 40px;
+            background-color: yellow;
+            color: rgb(129, 22, 210);
+            border: 2px solid rgb(228, 21, 138);
+            border-radius: 5px;
+            font-size: 24px;
+            font-weight: bolder;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #noBtn {
+            margin-left: 100px; /* Move No button a bit to the right of Yes button initially */
+        }
+    </style>
+    <title>Yes-No Buttons</title>
+</head>
+
+<body>
+    <input class="button" type="button" value="Yes" onclick="alert('You selected Yes!')" id="yesBtn" />
+    <input class="button" type="button" value="No" id="noBtn" onmouseenter="moveNoButton()" />
+
+    <script>
+        // Function to move the "No" button to a random position within the viewport
+        function moveNoButton() {
+            // Get the window's width and height
+            let windowWidth = window.innerWidth;
+            let windowHeight = window.innerHeight;
+
+            // Generate random positions within the window's boundaries
+            let randomX = Math.floor(Math.random() * (windowWidth - 100)); // 100 is the button's approximate width
+            let randomY = Math.floor(Math.random() * (windowHeight - 50)); // 50 is the button's approximate height
+
+            // Set the new position of the "No" button
+            let noButton = document.getElementById('noBtn');
+            noButton.style.left = randomX + 'px';
+            noButton.style.top = randomY + 'px';
+        }
+    </script>
+</body>
+
+</html>
