@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h1>{{ patient.id|default:"Add" }} Patient</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{ patient.name|default:'' }}">
+        </div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" class="form-control" id="age" name="age" value="{{ patient.age|default:'' }}">
+        </div>
+        <div class="form-group">
+            <label for="disease">Disease</label>
+            <input type="text" class="form-control" id="disease" name="disease" value="{{ patient.disease|default:'' }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+{% endblock %}
